@@ -1,10 +1,21 @@
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { buildConfig } from 'payload'
+import sharp from 'sharp'
 
 export default buildConfig({
   editor: lexicalEditor(),
   collections: [
+    {
+      slug: 'users',
+      auth: true,
+      admin: {
+        useAsTitle: 'email',
+      },
+      fields: [
+        { name: 'email', type: 'email', required: true },
+      ],
+    },
     {
       slug: 'blogs',
       admin: {
@@ -96,4 +107,5 @@ export default buildConfig({
     },
     push: true,
   }),
+  sharp,
 })
