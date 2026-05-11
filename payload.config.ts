@@ -5,6 +5,15 @@ import sharp from 'sharp'
 
 export default buildConfig({
   editor: lexicalEditor(),
+  admin: {
+    components: {
+      beforeLogin: ['@/app/(payload)/components/BeforeLogin'],
+      afterNavLinks: ['@/app/(payload)/components/AfterNavLinks'],
+    },
+    meta: {
+      titleSuffix: ' | David Joseph CMS',
+    },
+  },
   collections: [
     {
       slug: 'users',

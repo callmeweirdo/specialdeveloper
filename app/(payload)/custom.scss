@@ -1,0 +1,430 @@
+@layer payload-default {
+  :root {
+    /* Base Colors - Dark Theme */
+    --color-base-0: rgb(10, 10, 10);
+    --color-base-50: rgb(13, 13, 13);
+    --color-base-100: rgb(20, 20, 20);
+    --color-base-150: rgb(28, 28, 28);
+    --color-base-200: rgb(35, 35, 35);
+    --color-base-250: rgb(42, 42, 42);
+    --color-base-300: rgb(50, 50, 50);
+    --color-base-350: rgb(60, 60, 60);
+    --color-base-400: rgb(80, 80, 80);
+    --color-base-450: rgb(100, 100, 100);
+    --color-base-500: rgb(120, 120, 120);
+    --color-base-550: rgb(140, 140, 140);
+    --color-base-600: rgb(160, 160, 160);
+    --color-base-650: rgb(180, 180, 180);
+    --color-base-700: rgb(200, 200, 200);
+    --color-base-750: rgb(210, 210, 210);
+    --color-base-800: rgb(220, 220, 220);
+    --color-base-850: rgb(230, 230, 230);
+    --color-base-900: rgb(240, 240, 240);
+    --color-base-950: rgb(250, 250, 250);
+    --color-base-1000: rgb(255, 255, 255);
+
+    /* Gold Accent for Success */
+    --color-success-50: rgb(30, 25, 5);
+    --color-success-100: rgb(45, 38, 8);
+    --color-success-150: rgb(60, 50, 10);
+    --color-success-200: rgb(80, 68, 15);
+    --color-success-250: rgb(100, 85, 20);
+    --color-success-300: rgb(130, 110, 25);
+    --color-success-350: rgb(160, 135, 30);
+    --color-success-400: rgb(180, 155, 40);
+    --color-success-450: rgb(200, 175, 50);
+    --color-success-500: rgb(210, 185, 60);
+    --color-success-550: rgb(220, 195, 70);
+    --color-success-600: rgb(230, 205, 80);
+    --color-success-650: rgb(240, 215, 90);
+    --color-success-700: rgb(245, 225, 100);
+    --color-success-750: rgb(250, 230, 120);
+    --color-success-800: rgb(255, 235, 140);
+    --color-success-850: rgb(255, 240, 160);
+    --color-success-900: rgb(255, 245, 180);
+    --color-success-950: rgb(255, 250, 200);
+
+    /* Theme Variables */
+    --theme-bg: rgb(10, 10, 10);
+    --theme-text: rgba(255, 255, 255, 0.9);
+    --theme-border-color: rgba(255, 255, 255, 0.06);
+    --theme-input-bg: rgb(15, 15, 15);
+    --theme-elevation-0: rgb(10, 10, 10);
+    --theme-elevation-50: rgb(14, 14, 14);
+    --theme-elevation-100: rgb(20, 20, 20);
+    --theme-elevation-150: rgb(28, 28, 28);
+    --theme-elevation-200: rgb(35, 35, 35);
+    --theme-elevation-250: rgb(42, 42, 42);
+    --theme-elevation-300: rgb(50, 50, 50);
+    --theme-elevation-350: rgb(60, 60, 60);
+    --theme-elevation-400: rgb(80, 80, 80);
+    --theme-elevation-450: rgb(100, 100, 100);
+    --theme-elevation-500: rgb(120, 120, 120);
+    --theme-elevation-550: rgb(140, 140, 140);
+    --theme-elevation-600: rgb(160, 160, 160);
+    --theme-elevation-650: rgb(180, 180, 180);
+    --theme-elevation-700: rgb(200, 200, 200);
+    --theme-elevation-750: rgb(210, 210, 210);
+    --theme-elevation-800: rgb(220, 220, 220);
+    --theme-elevation-850: rgb(230, 230, 230);
+    --theme-elevation-900: rgb(240, 240, 240);
+    --theme-elevation-950: rgb(250, 250, 250);
+    --theme-elevation-1000: rgb(255, 255, 255);
+
+    /* Font */
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    /* Style */
+    --style-radius-s: 8px;
+    --style-radius-m: 12px;
+    --style-radius-l: 16px;
+  }
+
+  /* Global overrides */
+  html[data-theme="light"] {
+    --theme-bg: rgb(10, 10, 10);
+    --theme-text: rgba(255, 255, 255, 0.9);
+  }
+
+  body {
+    background: var(--theme-bg) !important;
+    color: var(--theme-text) !important;
+  }
+
+  /* Nav styling */
+  .nav {
+    background: rgba(10, 10, 10, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    border-right: 1px solid rgba(255, 215, 0, 0.08) !important;
+  }
+
+  .nav__brand {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+  }
+
+  .nav-group__toggle {
+    color: rgba(255, 255, 255, 0.4) !important;
+    font-family: 'SF Mono', 'Fira Code', monospace !important;
+    font-size: 10px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.15em !important;
+  }
+
+  .nav-group__toggle:hover,
+  .nav-group__toggle:focus-visible {
+    color: rgba(255, 215, 0, 0.8) !important;
+  }
+
+  .nav__link {
+    color: rgba(255, 255, 255, 0.5) !important;
+    border-radius: 8px !important;
+    margin: 2px 8px !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .nav__link:hover {
+    background: rgba(255, 215, 0, 0.05) !important;
+    color: rgba(255, 215, 0, 0.8) !important;
+  }
+
+  .nav__link--active {
+    background: rgba(255, 215, 0, 0.08) !important;
+    color: #FFD700 !important;
+    box-shadow: inset 2px 0 0 #FFD700 !important;
+  }
+
+  /* App header */
+  .app-header {
+    background: rgba(10, 10, 10, 0.9) !important;
+    backdrop-filter: blur(20px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+  }
+
+  /* Cards */
+  .card {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.04) !important;
+    border-radius: 12px !important;
+    backdrop-filter: blur(10px) !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .card:hover {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border-color: rgba(255, 215, 0, 0.15) !important;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  /* Tables */
+  .table {
+    background: transparent !important;
+  }
+
+  .table table {
+    border-collapse: separate !important;
+    border-spacing: 0 4px !important;
+  }
+
+  .table table thead th {
+    background: transparent !important;
+    color: rgba(255, 255, 255, 0.3) !important;
+    font-family: 'SF Mono', 'Fira Code', monospace !important;
+    font-size: 10px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.15em !important;
+    font-weight: 500 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+    padding: 12px 16px !important;
+  }
+
+  .table table tbody tr {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border-radius: 8px !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .table table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.04) !important;
+  }
+
+  .table table tbody td {
+    border: none !important;
+    padding: 16px !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+
+  /* Buttons */
+  .btn {
+    border-radius: 8px !important;
+    font-family: 'SF Mono', 'Fira Code', monospace !important;
+    font-size: 11px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .btn--style-primary {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 215, 0, 0.05)) !important;
+    border: 1px solid rgba(255, 215, 0, 0.3) !important;
+    color: #FFD700 !important;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.1) !important;
+  }
+
+  .btn--style-primary:hover {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.25), rgba(255, 215, 0, 0.1)) !important;
+    border-color: rgba(255, 215, 0, 0.5) !important;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.2) !important;
+  }
+
+  .btn--style-secondary {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+
+  .btn--style-secondary:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  /* Form inputs */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  textarea,
+  select {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 8px !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-family: var(--font-body) !important;
+    transition: all 0.2s ease !important;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus,
+  input[type="number"]:focus,
+  textarea:focus,
+  select:focus {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 215, 0, 0.4) !important;
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.08) !important;
+    outline: none !important;
+  }
+
+  /* Field labels */
+  .field-label {
+    color: rgba(255, 255, 255, 0.4) !important;
+    font-family: 'SF Mono', 'Fira Code', monospace !important;
+    font-size: 10px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.15em !important;
+    font-weight: 600 !important;
+  }
+
+  /* Collection list header */
+  .list-header__title {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  /* Drawer / Modal */
+  .drawer__content,
+  .modal__content {
+    background: rgb(15, 15, 15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8) !important;
+  }
+
+  /* Toast notifications */
+  .payload-toast-item {
+    background: rgba(20, 20, 20, 0.95) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(20px) !important;
+    border-radius: 12px !important;
+  }
+
+  .payload-toast-item.toast-success {
+    border-color: rgba(255, 215, 0, 0.3) !important;
+    color: #FFD700 !important;
+  }
+
+  /* Search bar */
+  .search-bar {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    border-radius: 12px !important;
+  }
+
+  .search-bar__input {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+
+  /* Pills / Tags */
+  .pill {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 6px !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+    font-family: 'SF Mono', 'Fira Code', monospace !important;
+    font-size: 10px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+  }
+
+  .pill--style-success {
+    background: rgba(255, 215, 0, 0.08) !important;
+    border-color: rgba(255, 215, 0, 0.2) !important;
+    color: #FFD700 !important;
+  }
+
+  /* Document controls */
+  .doc-controls {
+    background: rgba(10, 10, 10, 0.8) !important;
+    backdrop-filter: blur(20px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+  }
+
+  /* Login page */
+  .login__brand {
+    color: #FFD700 !important;
+  }
+
+  .login__form {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    border-radius: 16px !important;
+    backdrop-filter: blur(20px) !important;
+    padding: 40px !important;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 6px !important;
+    height: 6px !important;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent !important;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 3px !important;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 215, 0, 0.3) !important;
+  }
+
+  /* Step nav */
+  .step-nav a {
+    color: rgba(255, 255, 255, 0.5) !important;
+  }
+
+  .step-nav a:hover {
+    color: rgba(255, 215, 0, 0.8) !important;
+  }
+
+  /* Collapsible sections */
+  .collapsible__toggle {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.04) !important;
+    border-radius: 8px !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+
+  .collapsible__toggle:hover {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border-color: rgba(255, 215, 0, 0.15) !important;
+  }
+
+  /* Tabs */
+  .tabs__tab {
+    color: rgba(255, 255, 255, 0.4) !important;
+    font-family: 'SF Mono', 'Fira Code', monospace !important;
+    font-size: 10px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.15em !important;
+    border-bottom: 2px solid transparent !important;
+  }
+
+  .tabs__tab--active {
+    color: #FFD700 !important;
+    border-bottom-color: #FFD700 !important;
+  }
+
+  /* Where builder / filters */
+  .where-builder {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.04) !important;
+    border-radius: 12px !important;
+  }
+
+  /* Page controls */
+  .page-controls {
+    color: rgba(255, 255, 255, 0.4) !important;
+  }
+
+  /* Icon strokes */
+  .icon .stroke {
+    stroke: rgba(255, 255, 255, 0.4) !important;
+  }
+
+  /* Graphql playground */
+  .graphiql-container {
+    background: var(--theme-bg) !important;
+  }
+}
+
+/* Override the payload light theme to always be dark */
+html[data-theme="light"] {
+  --theme-bg: rgb(10, 10, 10);
+  --theme-text: rgba(255, 255, 255, 0.9);
+}
