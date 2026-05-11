@@ -94,9 +94,16 @@ export default function Home() {
   const handleBookingSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setBookingStatus({ loading: true, success: false, message: '' });
-    setTimeout(() => {
-      setBookingStatus({ loading: false, success: true, message: 'Reservation logged. David will confirm your session shortly.' });
-    }, 2000);
+    const data = Object.fromEntries(new FormData(e.currentTarget).entries());
+    try {
+      const res = await fetch('/api/bookings', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data),
+      });
+      const result = await res.json();
+      setBookingStatus({ loading: false, success: result.success, message: result.message });
+    } catch {
+      setBookingStatus({ loading: false, success: false, message: 'Something went wrong. Please try again.' });
+    }
   };
 
   const navItems = [
